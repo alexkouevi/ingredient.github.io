@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Projet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="wrapper">
+                <div class="logo"><a href="#">Mon Ingrédient</a></div>
+                <input type="radio" name="slide" id="menu_btn1">
+                <input type="radio" name="slide" id="cancel_btn1">
+                <ul class="nav_links">
+                    <label for="cancel_btn1" class="btn1 cancel_btn1"><i class="fas fa-times"></i></label>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="# ">A Propos</a></li>
+                    <li>
+                        <a href="#" class="desktop_item">Menu du Jour</a>
+                        <input type="checkbox" id="showDrop">
+                        <label for="showDrop" class="mobile_item">Menu du Jour</label>
+                        <ul class="drop_menu">
+                            <li><a href="#">Riz</a></li>
+                            <li><a href="#">Foufou</a></li>
+                            <li><a href="#">Frites d'Igname</a></li>
+                            <li><a href="#">Khom</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="desktop_item">Nos Domaines</a>
+                        <input type="checkbox" id="showMega">
+                        <label for="showMega" class="mobile_item">Nos Domaines</label>
+                        <div class="mega_box">
+                            <div class="content">
+                                <div class="row">
+                                    <img src="./imagesP/succes0.png" alt="Mon logo">
+                                </div>
+                                <div class="row">
+                                    <header>Informatique</header>
+                                    <ul class="mega_links">
+                                        <li><a href="#">Reseau Local</a></li>
+                                        <li><a href="#">Cameras de Surveillance</a></li>
+                                        <li><a href="#">Paraboles</a></li>
+                                        <li><a href="#">WiFi ZONE</a></li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <header>Les Achats</header>
+                                    <ul class="mega_links">
+                                        <li><a href="#">Fournitures de Cuisine</a></li>
+                                        <li><a href="#">Consomables Medicaux</a></li>
+                                        <li><a href="#">Les Restaurants</a></li>
+                                        <li><a href="#">Les Produits Divers</a></li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <header>La Cuisine</header>
+                                    <ul class="mega_links">
+                                        <li><a href="#">Les Sauces</a></li>
+                                        <li><a href="#">Or d’œuvre </a></li>
+                                        <li><a href="#">Charger...</a></li>
+                                        <li><a href="#">Charger...</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn" id="displayForm">Se Connecter</button>
+                    </li>
+                </ul>
+                <label for="menu_btn1" class="btn1 menu_btn1"><i class="fas fa-bars"></i></label>
+            </div>
+            <section>
+                <div class="sec_container">
+                    <div class="form_wrapper">
+                       <div class="card">
+                           <div class="card_header">
+                               <div id="forLogin" class="form_header active">Se Connecter</div>
+                               <div id="forRegister" class="form_header">S'inscrire</div>
+                           </div>
+                           <div class="card_body" id="formContainer">
+                                <form id="loginForm">
+                                      <input type="text" class="form_control" placeholder="@utilisateur" />
+                                      <input type="password" class="form_control" placeholder="@Mot de passe" />
+                                      <button class="formButton">Connexion</button>
+                                </form>
+                                <form id="registerForm" class="toggleForm">
+                                      <input type="text" class="form_control" placeholder="Nom & Prenom" />
+                                      <input type="password" class="form_control" placeholder="@Mot de passe" />
+                                      <input type="password" class="form_control" placeholder="@Confirmer mot de passe" />
+                                      <input type="text" class="form_control" placeholder="Année de naissance" />
+                                      <button class="formButton">Inscription</button>
+                                </form>
+                          </div>
+                       </div>
+                    </div>
+                </div>
+            </section>
+        </nav>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>

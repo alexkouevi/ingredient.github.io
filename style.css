@@ -1,0 +1,444 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif
+}
+/*.container
+{
+    position: relative;
+    background: url('./imagesP/bg1.jpg')center center no-repeat;
+    height: 100vh;
+    width: 100%;
+    padding: 0 80%;
+    background-size: cover;
+}*/
+nav
+{
+    position: fixed;
+    background: #f29b0f;
+    width: 100%;
+    z-index: 999;
+    height: 65px;
+    /*line-height: 65px;*/
+}
+nav .wrapper
+{
+    position: relative;
+    max-width: 1250px;
+    padding: 0 30px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.wrapper .logo a
+{
+    color: #f2f2f9;
+    text-decoration: none;
+    font-size: 39px;
+    font-weight: 600;
+    font-family: courgette;
+}
+.wrapper .nav_links
+{
+    display: inline-flex;
+}
+.nav_links li
+{
+    list-style: none;
+}
+.nav_links li a
+{
+    color: #f2f2f9;
+    text-decoration: none;
+    font-size: 23px;
+    font-weight: 550;
+    padding: 9px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    line-height: 55px;
+}
+.nav_links li a:hover
+{
+    background: #fff;
+    color: #f29b0f;
+}
+.nav_links .drop_menu
+{
+    background: #f2240f;
+    width: 180px;
+    top: 65px;
+    line-height: 45px;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+.nav_links li:hover .drop_menu,
+.nav_links li:hover .mega_box
+{
+    top: 65px;
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+.drop_menu li a:hover
+{
+    color: #f2240f;
+}
+.drop_menu li a
+{
+    font-family: 'ubuntu';
+    width: 100%;
+    display: block;
+    padding: 0 0 0 15px;
+    font-weight: 400;
+    border-radius: 0;
+    font-size: 19px;
+}
+.mega_box
+{
+    position: absolute;
+    top: 85px;
+    width: 100%;
+    left: 0;
+    padding: 0 30px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.mega_box .content
+{
+    background: #f2240f;
+    padding: 25px 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.content .row
+{
+    width: calc(25% - 30px);
+    line-height: 45px;
+}
+.content .row img
+{
+    width: 100%;
+    height: 93%;
+    object-fit: cover;
+}
+header
+{
+    font-size: 23px;
+}
+.content .row header
+{
+    color: #fff;
+    font-style: 20px;
+    font-weight: 500;
+}
+.content .row .mega_links
+{
+    margin-left: -40px;
+    border-left: 1px solid #12f5f5;
+}
+.content .row:nth-child(1),
+.content .row:nth-child(2)
+{
+    border-left: 0px;
+}
+.row .mega_links li
+{
+    padding: 0 20px;
+}
+.row .mega_links li a
+{
+    padding: 0 20px;
+    color: #f2f2f9;
+    font-size: 19px;
+    display: block;
+    font-family: 'ubuntu';
+}
+.row .mega_links li a:hover
+{
+    color: #f2240f;
+}
+button.btn
+{
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 0;
+    background-color: transparent;
+    color: #94f7e6;
+    border: 1px solid transparent;
+    transition: border-color 0.3s
+}
+button.btn:hover
+{
+    border-color: #12f5f5;
+}
+section
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+.form_wrapper
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: auto;
+}
+.form_wrapper .card
+{
+    width: 395px;
+    padding: 30px;
+    background-color: rgb(0 0 0 /35%); 
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+.card.show
+{
+    visibility: visible;
+    opacity: 1;
+}
+.card_header
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 30px 20px 0;
+    font-size: 1.1rem;
+    color: #94f7e6;
+    box-shadow: 2px 3px 8px #d3f7ff71;
+    border-radius: 50px;
+}
+.card_header .form_header
+{
+    flex: 50%;
+    text-align: center;
+    padding: 10px 0;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    user-select: none;
+    cursor: pointer;
+}
+.card_header .form_header.active
+{
+    box-shadow: inset 1px 1px 2px rgb(19 210 177 / 55%), 
+    inset -1px 1px 2px rgb(19 210 177 / 55%), inset -1px -1px 2px rgb(19 210 177 / 55%), 
+    inset 1px -1px 2px rgb(19 210 177 / 55%);
+    border-color: #94f7e6;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.card_body
+{
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 40px 0;
+    text-align: center;
+}
+form
+{
+    flex: 0 0 100%;
+}
+.toggleForm
+{
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+.form_control
+{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgb(134 255 249 / 65%);
+    background: none;
+    outline: none;
+    padding: 10px 5px;
+    margin-bottom: 20px;
+    color: #f2f2f9;
+}
+.form_control::placeholder
+{
+    color: #94f7e6;
+}
+.formButton
+{
+    border: 1px solid transparent;
+    padding: 1rem 3rem;
+    background-color: #94f7e6;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.formButton:hover
+{
+    box-shadow: 3px 5px 15px #12f5f5;
+    transform: translateY(-5px);
+}
+.nav_links .mobile_item
+{
+    display: none;
+}
+.wrapper .btn1
+{
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+.wrapper .btn1.cancel_btn1
+{
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+@media screen and (max-width: 970px)
+{
+    .wrapper .btn1
+    {
+        display: block;
+    }
+    .wrapper .nav_links
+    {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        max-width: 350px;
+        background: #f2240f;
+        display: block;
+        top: 0;
+        left: -100%;
+        overflow-y: auto;
+        line-height: 55px;
+        padding: 50px 10px;
+        box-shadow: 0 15px 15px rgba(0,0,0,0.15);
+        transition: all 0.3s ease;
+    }
+    #menu_btn1:checked ~ .nav_links
+    {
+        left: 0;
+    }
+    #menu_btn1:checked ~ .btn1.menu_btn1
+    {
+        display: none;
+    }
+    .nav_links::-webkit-scrollbar
+    {
+        width: 0px;
+    }
+    .nav_links li
+    {
+        margin: 15px 10px;
+    }
+    .nav_links li a
+    {
+        padding: 0 20px;
+        display: block;
+        font-size: 20px;
+    }
+    .nav_links .drop_menu
+    {
+        position: static;
+        visibility: visible;
+        opacity: 1;
+        top: 65px;
+        padding-left: 20px;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+    .nav_links .drop_menu li
+    {
+        margin: 0;
+    }
+    #showDrop:checked ~ .drop_menu,
+    #showMega:checked ~ .mega_box
+    {
+        max-height: 100%;
+    }
+    .nav_links .drop_menu li a
+    {
+        font-size: 18px;
+        border-radius: 5px;
+    }
+    .nav_links .desktop_item
+    {
+        display: none;
+    }
+    .nav_links .mobile_item
+    {
+        display: block;
+        font-size: 20px;
+        color: #12f5f5;
+        font-weight: 500;
+        padding-left: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+    .nav_links .mobile_item:hover
+    {
+        background: #f2f2f9;
+        color: #f2240f;
+    }
+    .mega_box
+    {
+        position: static;
+        top: 65px;
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+        padding: 0 20px;
+        max-height: 0px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+    .mega_box .content
+    {
+        background: #f2240f;
+        flex-direction: column;
+        padding: 20px 20px 0 20px;
+    }
+    .mega_box .content .row
+    {
+        width: 100%;
+        margin-bottom: 15px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .mega_box .content .row:nth-child(1),
+    .mega_box .content .row:nth-child(2)
+    {
+        border-top: 0px;
+    }
+    .content .row .mega_links
+    {
+        border-left: 0px;
+        padding-left: 15px;
+    }
+    .row .mega_links li
+    {
+        margin: 0;
+    }
+    .content row header
+    {
+        font-size: 19px;
+    }
+   
+}
+.wrapper input
+{
+    display: none;
+}
